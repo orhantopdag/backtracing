@@ -23,7 +23,7 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
 
-
+       
         private string siralama;
         public string Siralama
         {
@@ -117,6 +117,36 @@ namespace WpfApp1
             InitializeComponent();
             this.DataContext = this;
             var a = cozumVarmi();
+
+            for (int i = 0; i < 8; i++)
+            {
+                gr1.ColumnDefinitions.Add(new ColumnDefinition());
+                gr1.RowDefinitions.Add(new RowDefinition());
+                for (int t = 0; t < 8; t++)
+                {
+                    
+                    Grid grd = new Grid();
+                    grd.RowDefinitions.Add(new RowDefinition());
+                    grd.RowDefinitions.Add(new RowDefinition());
+                    if ((i+t)%2==0)
+                    {
+                        grd.Background = Brushes.Green;
+                    }
+                    else
+                    {
+                        grd.Background = Brushes.Red;
+                    }
+                    Grid.SetRow(grd, i);
+                    Grid.SetColumn(grd, t);
+                    gr1.Children.Add(grd);
+                }
+            }
+            //Grid grd = new Grid();
+            //grd.ColumnDefinitions.Add(new ColumnDefinition());
+            //grd.ColumnDefinitions.Add(new ColumnDefinition());
+            
         }
+
+        
     }
 }

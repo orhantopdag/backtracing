@@ -6,9 +6,29 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox Text="{Binding Siralama}">
-            
-        </TextBox>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="3*"/>
+
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Name="gr1">
+                
+
+            </Grid>
+
+            <TextBox Grid.Row="1" Text="{Binding Siralama}">
+
+            </TextBox>
+           
+        </Grid>
+      
+        
     </Grid>
 </Window>
